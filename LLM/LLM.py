@@ -1,0 +1,7 @@
+from langchain.document_loaders import PyPDFDirectoryLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.vectorstores import Pinecone
+from langchain import PromptTemplate
+import pinecone
+import os
