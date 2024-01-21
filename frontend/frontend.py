@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.title("Echo Bot")
+st.title("Teacher Bot")
 
 # add a side bar with a file uploader only with pdf files and a submit button
 st.sidebar.title("Upload a PDF")
