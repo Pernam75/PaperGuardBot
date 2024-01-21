@@ -5,8 +5,14 @@ st.title("Echo Bot")
 
 # add a side bar with a file uploader only with pdf files and a submit button
 st.sidebar.title("Upload a PDF")
-uploaded_file = st.sidebar.file_uploader("Choose a PDF file", type="pdf", accept_multiple_files=True)
+uploaded_files = st.sidebar.file_uploader("Choose a PDF file", type="pdf", accept_multiple_files=True)
 submit_button = st.sidebar.button("Submit")
+# when the submit button is clicked, loop through the uploaded files and response get the name of the file
+if submit_button:
+    pdf_db = "uploaded files:\n"
+    for uploaded_file in uploaded_files:
+        pdf_db += f"\n{uploaded_file.name}\n"
+    st.sidebar.markdown(pdf_db)
 
 # Initialize chat history
 if "messages" not in st.session_state:
