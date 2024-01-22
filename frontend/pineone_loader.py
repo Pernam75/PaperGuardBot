@@ -42,11 +42,11 @@ class PineconeLoader():
         response = self.docsearch.similarity_search(question, k=4)
         return response
 
-# ask question
-docs = 'pdfs'
-embeddings = 'sentence-transformers/all-MiniLM-L6-v2'
-index_name = "chatbotpdfs"
-question = "What is the difference between a trust and a will?"
-loader = PineconeLoader(docs, embeddings, index_name)
-response = loader.query(question)
-print(response)
+# # ask question
+# docs = 'pdfs'
+# embeddings = 'sentence-transformers/all-MiniLM-L6-v2'
+# index_name = "chatbotpdfs"
+# question = "What is the difference between a trust and a will?"
+# loader = PineconeLoader(docs, embeddings, index_name)
+# response = loader.query(question)
+# print(response)
