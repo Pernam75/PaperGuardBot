@@ -11,8 +11,10 @@ submit_button = st.sidebar.button("Submit")
 if submit_button:
     pdf_db = "uploaded files:\n"
     for uploaded_file in uploaded_files:
-        pdf_db += f"\n{uploaded_file.name}\n"
-    st.sidebar.markdown(pdf_db)
+        # request API to save the file
+        file_bytes = uploaded_file.getvalue()
+        req = requests.post("http://localhost:5000/upload", files={"file": file_bytes})
+        print(req)
 
 # Initialize chat history
 if "messages" not in st.session_state:

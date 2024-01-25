@@ -2,9 +2,11 @@ from langchain.document_loaders import PyPDFDirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Pinecone
-from langchain import PromptTemplate
 import pinecone
 import os
+
+EMBEDDINGS = 'sentence-transformers/all-MiniLM-L6-v2'
+INDEX_NAME = "chatbotpdfs"
 
 # initialize pinecone
 PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
@@ -27,26 +29,24 @@ def load_embeddings(model_name):
     return HuggingFaceEmbeddings(model_name=model_name)
 
 # create embeddings for each document
-def create_embeddings(docs, embeddings, index_name):
+def create_embeddings_documents(docs, embeddings, index_name):
     docsearch = Pinecone.from_texts([t.page_content for t in docs], embeddings, index_name=index_name)
     return docsearch
 
 class PineconeLoader():
-    def __init__(self, pdf_path, embeddings_model, index_name):
-        self.docs = load_pdf_documents(pdf_path)
-        self.embeddings = load_embeddings(embeddings_model)
+    def __init__(self, embeddings_model=EMBEDDINGS, index_name=INDEX_NAME, pdf_path=None):
         self.index_name = index_name
-        self.docsearch = create_embeddings(self.docs, self.embeddings, self.index_name)
+        self.embeddings = load_embeddings(embeddings_model)
+        self.docs = load_pdf_documents(pdf_path)
+        self.docsearch = create_embeddings_documents(self.docs, self.embeddings, self.index_name)
 
-    def query(self, question):
-        response = self.docsearch.similarity_search(question, k=4)
-        return response
+    def get_context(self, input, k=5):
+        context = self.docsearch.similarity_search(input, k=k)
+        return context
 
 # # ask question
-# docs = 'pdfs'
-# embeddings = 'sentence-transformers/all-MiniLM-L6-v2'
-# index_name = "chatbotpdfs"
+# path = "LLM/pdfs"
 # question = "What is the difference between a trust and a will?"
-# loader = PineconeLoader(docs, embeddings, index_name)
-# response = loader.query(question)
+# loader = PineconeLoader(EMBEDDINGS, INDEX_NAME, pdf_path=path)
+# response = loader.get_context(question)
 # print(response)

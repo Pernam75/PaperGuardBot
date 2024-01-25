@@ -1,2 +1,5 @@
 LLM/pdfs/*
 *.ipynb
+__pycache__/
+.vscode/
+.env

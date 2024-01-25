@@ -2,6 +2,7 @@
 # run with: python simple_api.py
 
 from flask import Flask, jsonify, request
+from utils import *
 
 app = Flask(__name__)
 
@@ -16,8 +17,18 @@ def test():
 def echo():
     # get the input parameter from the query string
     input = request.args.get("input")
+    context = request.args.get("context")
+    """
+        RUN LLM HERE
+    """
     # return the input parameter, with a message to the caller
-    return jsonify(response=f"{input} from API", status=200)
+    return jsonify(response=f"{input} from API\n\nContext is: {context}", status=200)
+
+@app.route("/upload", methods=["GET"])
+def upload():
+    file = request.files["file"]
+    save_uploadedfile(file)
+    return jsonify(response="file saved", status=200)
 
 # run the app
 if __name__ == "__main__":
