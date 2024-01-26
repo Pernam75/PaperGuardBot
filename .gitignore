@@ -1,0 +1,11 @@
+# Ignore the model folder
+/LLM/model/
+
+# Ignore all gguf files
+*.gguf
+
+# Ignore all pdf files
+*.pdf
+
+# Ignore the data folder
+/LLM/data/
