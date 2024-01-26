@@ -1,4 +1,6 @@
 LLM/pdfs/*
+LLM/data/*
+LLM/model/*
 *.ipynb
 __pycache__/
 .vscode/
