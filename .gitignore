@@ -2,6 +2,7 @@ LLM/pdfs/*
 LLM/data/*
 LLM/model/*
 *.ipynb
+*.pdf
 __pycache__/
 .vscode/
 .env

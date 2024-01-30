@@ -44,9 +44,9 @@ class PineconeLoader():
         context = self.docsearch.similarity_search(input, k=k)
         return context
 
-# # ask question
-# path = "LLM/pdfs"
-# question = "What is the difference between a trust and a will?"
-# loader = PineconeLoader(EMBEDDINGS, INDEX_NAME, pdf_path=path)
-# response = loader.get_context(question)
-# print(response)
+# ask question
+path = "LLM/data"
+question = "What is the difference between a trust and a will?"
+loader = PineconeLoader(EMBEDDINGS, INDEX_NAME, pdf_path=path)
+response = loader.get_context(question)
+print(response)
