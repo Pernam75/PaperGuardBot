@@ -47,7 +47,7 @@ Navigate to [Pinecone](https://www.pinecone.io/). Create an account and obtain y
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Pernam75/PaperGuardBot.git
     ```
 2. Navigate to the backend folder:
 
