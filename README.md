@@ -7,10 +7,6 @@
 
 <div align="center">
 
-<!-- ![Check Rules](https://img.shields.io/badge/see-rules-0078D4?logo=microsoftonedrive&link=https%3A%2F%2Fefrei365net-my.sharepoint.com%2F%3Ab%3A%2Fg%2Fpersonal%2Fjules_rubin_efrei_net%2FEcw-ANTxu5dNggBS3hHW0cgBI143_KRtDaYLvA6Z4ukHZw%3Fe%3DTlxje9)
-![See Report](https://img.shields.io/badge/see-report-0078D4?logo=microsoftonedrive&link=https%3A%2F%2Fefrei365net-my.sharepoint.com%2F%3Aw%3A%2Fg%2Fpersonal%2Fjules_rubin_efrei_net%2FEUFkISgdWf5EqGDJPeu_ofABOdyzVniqtlue1JXqeEUsqA%3Fe%3D3jowMr)
-![See Presentation](https://img.shields.io/badge/see-presentation-B7472A?logo=microsoftpowerpoint&link=https%3A%2F%2Fefrei365net-my.sharepoint.com%2F%3Ab%3A%2Fg%2Fpersonal%2Fjules_rubin_efrei_net%2FEcw-ANTxu5dNggBS3hHW0cgBI143_KRtDaYLvA6Z4ukHZw%3Fe%3DTlxje9) -->
-
 [![Check Rules](https://img.shields.io/badge/see-rules-0078D4?logo=microsoftonedrive&link=https%3A%2F%2Fefrei365net-my.sharepoint.com%2F%3Ab%3A%2Fg%2Fpersonal%2Fjules_rubin_efrei_net%2FEcw-ANTxu5dNggBS3hHW0cgBI143_KRtDaYLvA6Z4ukHZw%3Fe%3DTlxje9)](https://efrei365net-my.sharepoint.com/:b:/g/personal/jules_rubin_efrei_net/Ecw-ANTxu5dNggBS3hHW0cgBI143_KRtDaYLvA6Z4ukHZw?e=Tlxje9)
 [![See Report](https://img.shields.io/badge/see-report-0078D4?logo=microsoftonedrive&link=https%3A%2F%2Fefrei365net-my.sharepoint.com%2F%3Aw%3A%2Fg%2Fpersonal%2Fjules_rubin_efrei_net%2FEUFkISgdWf5EqGDJPeu_ofABOdyzVniqtlue1JXqeEUsqA%3Fe%3D3jowMr)](https://efrei365net-my.sharepoint.com/:w:/g/personal/jules_rubin_efrei_net/EUFkISgdWf5EqGDJPeu_ofABOdyzVniqtlue1JXqeEUsqA?e=3jowMr)
 [![See Presentation](https://img.shields.io/badge/see-presentation-B7472A?logo=microsoftpowerpoint&link=https%3A%2F%2Fefrei365net-my.sharepoint.com%2F%3Ab%3A%2Fg%2Fpersonal%2Fjules_rubin_efrei_net%2FEcw-ANTxu5dNggBS3hHW0cgBI143_KRtDaYLvA6Z4ukHZw%3Fe%3DTlxje9)](https://efrei365net-my.sharepoint.com/:b:/g/personal/jules_rubin_efrei_net/Ecw-ANTxu5dNggBS3hHW0cgBI143_KRtDaYLvA6Z4ukHZw?e=Tlxje9)
