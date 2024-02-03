@@ -16,7 +16,7 @@ if submit_button:
         # request API to save the file
         file_bytes = uploaded_file.getvalue()
         #remove the extension from the file name and send it along with the file
-        req = requests.post("http://localhost:5000/upload", files={"file": file_bytes}, data={"filename": uploaded_file.name.split(".")[0]})
+        req = requests.post(f"http://{api_ip}/upload", files={"file": file_bytes}, data={"filename": uploaded_file.name.split(".")[0]})
         print(req, uploaded_file.name)
         if req.status_code == 200:
             # success message 
@@ -59,7 +59,7 @@ if prompt := st.chat_input("What is up?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-response = requests.post("http://localhost:5000/ask", json={"question": prompt}).json()["response"] if prompt else None
+response = requests.post(f"http://{api_ip}/ask", json={"question": prompt}).json()["response"] if prompt else None
 
 if response:
     # Display assistant response in chat message container

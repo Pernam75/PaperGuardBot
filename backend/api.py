@@ -52,7 +52,7 @@ def llm_response(question, model, template, docsearch):
     context = " \n ".join([c.page_content for c in docsearch.similarity_search(question, k=4)])
     print(context)
     prompt = promt_template.format(context=context, question=question)
-    response = model(prompt, max_tokens=500, stop=["Q:"], echo=True)
+    response = model(prompt, max_tokens=2048, stop=["Q:"], echo=True)
     print(response)
     return response["choices"][0]["text"][len(prompt):]
 
@@ -80,14 +80,19 @@ def llm_response(question, model, template, docsearch):
 
 
 # create prompt template
-SYSTEM_PROMPT = """Use the following pieces of context to answer the question at the end. and if the contenxt is relevant to the question, please answer the question while incorporating the context into your answer. """
+SYSTEM_PROMPT = """Use the following pieces of context to answer the question at the end.
+If there is no relevant information in the provided context, try to answer yourself.
+limit the output size to less than 1024 tokens.
+"""
 B_INST, E_INST = "[INST]", "[/INST]"
 B_SYS, E_SYS = "<>\n", "\n<>\n\n"
 SYSTEM_PROMPT = B_SYS + SYSTEM_PROMPT + E_SYS
 instruction = """
+Give the answer to the user query:
+{question}
+Using the information given in the context
 {context}
-Question: {question}
-Answer: 
+Answer:
 """
 template = SYSTEM_PROMPT + instruction
 
@@ -106,7 +111,7 @@ pinecone.init(
 
 
 # variable names 
-LLM_model_name = 'llm/model/ggml-model-q4_k.gguf'
+LLM_model_name = 'llm/model/llama-2-7b-chat.Q4_K_M.gguf'
 embeddings_model_name = 'sentence-transformers/all-MiniLM-L6-v2'
 index_name = "chatbotpdfs"
 data_path = 'data'
